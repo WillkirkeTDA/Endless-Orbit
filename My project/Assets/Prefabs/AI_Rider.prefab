@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Sprite: {fileID: 2800042152180130434, guid: 43586a8430736e440b57c6eee65376d7, type: 3}
   m_Color: {r: 0.78113204, g: 0.78033775, b: 0.028002737, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,9 +244,13 @@ MonoBehaviour:
   maxSpeed: 18
   drag: 0.94
   impactMultiplier: 2.2
+  maxSpeedKnockbackMultiplier: 1.5
+  maxKnockback: 35
+  maxKnockbackSpeed: 40
   selfImpactResistance: 0.35
   minimumImpactSpeed: 2
   impactCooldownTime: 0.15
+  knockbackSpeedTime: 0.2
 --- !u!114 &7412452157738910561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,19 +266,25 @@ MonoBehaviour:
   maxSpeed: 25
   drag: 0.985
   impactMultiplier: 1.8
+  maxSpeedKnockbackMultiplier: 1.5
+  maxKnockback: 35
+  maxKnockbackSpeed: 40
   selfImpactResistance: 0.65
   minimumImpactSpeed: 2
   impactCooldownTime: 0.15
+  knockbackSpeedTime: 0.2
   rotationSpeed: 115
   predictionTime: 0.08
   aimTolerance: 12
+  chargeDuration: 0.95
   minCharge: 0.2
   maxCharge: 0.7
-  minImpulse: 5
+  recoveryChargeDuration: 0.35
+  minImpulse: 0.004
   maxImpulse: 22
   edgeMargin: 1.5
-  thinkDelay: 0.1
-  attackCooldown: 0.4
+  thinkDelay: 0.3
+  attackCooldown: 1.2
   testMode: 0
   stayStill: 0
 --- !u!58 &3377411885976611924
@@ -727,8 +737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIChargeUI
   ai: {fileID: 7412452157738910561}
-  lowChargeColor: {r: 1, g: 0, b: 0, a: 1}
+  lowChargeColor: {r: 0, g: 1, b: 0, a: 1}
   mediumChargeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxChargeColor: {r: 0, g: 1, b: 0, a: 1}
+  maxChargeColor: {r: 1, g: 0.13575058, b: 0, a: 1}
   mediumThreshold: 0.5
   maxThreshold: 0.9

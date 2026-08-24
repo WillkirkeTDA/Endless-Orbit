@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   speedRotation: 120
-  minImpulse: 5
-  maxImpulse: 30
+  minImpulse: 0.004
+  maxImpulse: 40
   maxChargeTime: 0.65
   movementThreshold: 1
 --- !u!212 &518199181
@@ -311,7 +311,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Sprite: {fileID: 2800042152180130434, guid: 43586a8430736e440b57c6eee65376d7, type: 3}
   m_Color: {r: 0.78113204, g: 0.78033775, b: 0.028002737, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -350,12 +350,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4dbf596a893b44a80a8aea1c8507b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rider
-  maxSpeed: 18
+  maxSpeed: 60
   drag: 0.94
   impactMultiplier: 2.2
+  maxSpeedKnockbackMultiplier: 1.5
+  maxKnockback: 25
+  maxKnockbackSpeed: 40
   selfImpactResistance: 0.35
   minimumImpactSpeed: 2
   impactCooldownTime: 0.15
+  knockbackSpeedTime: 0.15
 --- !u!50 &518199185
 Rigidbody2D:
   serializedVersion: 5
@@ -625,7 +629,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1233,6 +1237,13 @@ MonoBehaviour:
   aiPrefab: {fileID: 3428929177246615195, guid: 58e1f402c0356af449d618a754ce59de, type: 3}
   spawnDelay: 2
   spawnDistanceFromCenter: 5
+  firstWaveSize: 1
+  secondWaveSize: 2
+  thirdWaveSize: 3
+  finalWaveSize: 4
+  secondWaveAt: 3
+  thirdWaveAt: 9
+  finalWaveAt: 18
 --- !u!4 &1409262759
 Transform:
   m_ObjectHideFlags: 0
@@ -1316,7 +1327,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  m_Sprite: {fileID: -4858974034414313462, guid: 92ef974f4bde1bd4cbb1750f22dfeaa8, type: 3}
   m_Color: {r: 0.4415095, g: 0.4415095, b: 0.4415095, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1380,7 +1391,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 0.94814813, y: 0.837037}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
